@@ -1,4 +1,7 @@
 /*
+
+ WIP for twitter embed magic
+
  <meta name="twitter:card" content="photo" />
  <meta name="twitter:site" content="@flickr" />
  <meta name="twitter:title" content="Mountain sunset" />
@@ -43,12 +46,12 @@ Router.map(function() {
           'description': badge.description
         },
         twitter: {
-          card: 'photo',
+          card: 'summary',
           site: '@driiftio',
           title: badge.name,
           description: badge.description,
-          image: badge.url,
-          url: 'http://driift.io'
+          image: badge.url
+          //url: 'http://driift.io'
         }
       })
     }

@@ -7,7 +7,7 @@ Meteor.methods({
 
   // secure! should come from a driift domain!
   'tweetBadge': function (badgeData, cardData) {
-    check(badgeData, { name: String, event: Match.Optional(String) })
+    check(badgeData, Match.ObjectIncluding({ name: String, event: Match.Optional(String) }))
 
     var fields = {name: badgeData.name}
     if (badgeData.event) fields.event = badgeData.event

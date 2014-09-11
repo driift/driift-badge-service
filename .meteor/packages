@@ -8,4 +8,5 @@ iron:router
 manuelschoebel:ms-seo
 meteorhacks:fast-render
 spiderable
-
+cmather:handlebars-server
+node-twitter

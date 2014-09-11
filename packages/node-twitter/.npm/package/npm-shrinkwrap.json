@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "node-twitter": {
+      "version": "0.5.1",
+      "dependencies": {
+        "request": {
+          "version": "2.9.203"
+        }
+      }
+    }
+  }
+}

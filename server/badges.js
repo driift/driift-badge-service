@@ -9,7 +9,7 @@ Meteor.methods({
     check(badgeData, Match.ObjectIncluding({ name: String, event: Match.Optional(String) }))
 
     var fields = {name: badgeData.name}
-    if (!badge.global && badgeData.event) fields.event = badgeData.event
+    if (!badgeData.global && badgeData.event) fields.event = badgeData.event
 
     var badge = Badges.findOne(fields)
     if (!badge) throw new Meteor.Error(404, "No badge for " + badgeData.name)

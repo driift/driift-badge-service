@@ -5,7 +5,6 @@ Meteor.publish('badges', function(id) {
 
 Meteor.methods({
 
-  // secure! should come from a driift domain!
   'tweetBadge': function (badgeData, cardData) {
     check(badgeData, Match.ObjectIncluding({ name: String, event: Match.Optional(String) }))
 
@@ -19,13 +18,12 @@ Meteor.methods({
       badge: badge,
       card: cardData
     })
-
+    
     Tweet.tweetWithMedia(status, pathFor(badge), function(err, data){
       if (err) return console.error(err)
       if (data) return console.log("badge tweet success", status, badge.name)
     })
   }
-
 })
 
 Meteor.startup(function () {

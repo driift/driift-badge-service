@@ -18,7 +18,11 @@ Meteor.methods({
       badge: badge,
       card: cardData
     })
-    
+
+    if (Meteor.settings.twitter && Meteor.settings.twitter.silent) {
+      throw new Meteor.Error(420, "Badge service is silent")
+    }
+
     Tweet.tweetWithMedia(status, pathFor(badge), function(err, data){
       if (err) return console.error(err)
       if (data) return console.log("badge tweet success", status, badge.name)

@@ -1,0 +1,16 @@
+<template name="card">
+  <style>
+    html,body,.card{ margin:0; padding: 0; height:100%; background:#ed4a59; }
+    .card{text-align: center;}
+    .card:before{
+      content:" ";
+      display: inline-block;
+      width:0;
+      height: 100%;
+    }
+    .card:before, .card img{ vertical-align: middle}
+  </style>
+  <div class="card">
+    <img src="{{badge.url}}" alt="{{badge.name}}" longdesc="{{badge.description}}" />
+  </div>
+</template>

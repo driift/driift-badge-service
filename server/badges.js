@@ -57,8 +57,8 @@ Meteor.startup(function () {
         badge.puid = puidFor(badge)
         badge.url = urlFor(badge)
 
-        console.log('%s badge at %s', b.puid, b.url)
-        if (!Badges.findOne({puid: b.puid})) Badges.insert(b)
+        console.log('%s badge at %s', badge.puid, badge.url)
+        if (!Badges.findOne({puid: badge.puid})) Badges.insert(badge)
       })
 
   }, 2000)

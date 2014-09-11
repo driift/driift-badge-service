@@ -11,6 +11,8 @@ Router.map(function() {
   return this.route('card', {
     path: '/card/:badgeId',
 
+    fastRender: true,
+
     waitOn: function() {
       console.log('waiting for', this.params.badgeId)
       return Meteor.subscribe('badges', this.params.badgeId)
@@ -25,12 +27,11 @@ Router.map(function() {
     onAfterAction: function() {
       // The SEO object is only available on the client.
       // Return if you define your routes on the server, too.
-      if (!Meteor.isClient) {
-        return;
-      }
+      if (!Meteor.isClient) return
+
       var badge = Badges.findOne(this.params.badgeId)
 
-      if(!badge) return //console.error('No badge found for %s', this.params.badgeId)
+      if(!badge) return // console.error('No badge found for %s', this.params.badgeId)
 
       SEO.set({
         title: badge.name,

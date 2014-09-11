@@ -1,3 +1,4 @@
+accounts-base@1.0.1
 application-configuration@1.0.1
 autoupdate@1.0.6
 binary-heap@1.0.0
@@ -23,12 +24,15 @@ iron:router@0.9.3
 jquery@1.0.0
 json@1.0.0
 livedata@1.0.9
+localstorage@1.0.0
 logging@1.0.2
 manuelschoebel:ms-seo@0.3.0
 meteor-platform@1.0.2
 meteor@1.0.3
+meteorhacks:fast-render@1.0.1
 minifiers@1.0.2
 minimongo@1.0.2
+mongo-livedata@1.0.4
 mongo@1.0.4
 observe-sequence@1.0.2
 ordered-dict@1.0.0
@@ -38,6 +42,7 @@ reactive-var@1.0.1
 reload@1.0.1
 retry@1.0.0
 routepolicy@1.0.0
+service-configuration@1.0.1
 session@1.0.1
 spacebars-compiler@1.0.2
 spacebars@1.0.1

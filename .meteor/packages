@@ -6,3 +6,5 @@
 standard-app-packages
 iron:router
 manuelschoebel:ms-seo
+meteorhacks:fast-render
+

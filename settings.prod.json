@@ -1,0 +1,17 @@
+{
+  "badges": {
+    "path": "../client/app/img/badges/"
+  },
+  "twitter": {
+    "consumer_key":"eWOoFy1BLG4vx6kCW55q2Zgg9",
+    "consumer_secret":"i28v1OQ3EzygvhPERsYcGePmHJ8O4vTD74zvPWb832gCnwskXc",
+    "access_token":"2570755134-bHatE98hlD1UPkm3bsWx9z0txMklCePAus4YRvw",
+    "access_token_secret":"Dt0qWMrniX4d3yiC1mV74pZlh9sOhlpP5F1G2NfsBN8Zq",
+    "badges":{
+      "exclude": [
+        "Organiser",
+        "Speaker"
+      ]
+    }
+  }
+}

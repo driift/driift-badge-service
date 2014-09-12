@@ -21,7 +21,7 @@ Tweet = {
       console.log('tweetWithMedia not sent due to `settings.twitter.silent`', status, path)
       Meteor.setTimeout(cb, 100)
     } else {
-      console.log('tweetWithMedia', status, path, Twitter)
+      console.log('tweetWithMedia', status, path)
       Tweet.uploadClient.statusesUpdateWithMedia(
         {
           'status': status,

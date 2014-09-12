@@ -11,8 +11,10 @@ Meteor.methods({
     var fields = {name: badgeData.name}
     if (!badgeData.global && badgeData.event) fields.event = badgeData.event
 
-    var badge = Badges.findOne(fields)
-    if (!badge) throw new Meteor.Error(404, "No badge for " + badgeData.name)
+    //var badge = Badges.findOne(fields)
+    //if (!badge) throw new Meteor.Error(404, "No badge for " + badgeData.name)
+    // TODO: pull all badge logic into badge service
+    var badge = badgeData
 
     var status = Handlebars.templates['tweet-badge']({
       badge: badge,
@@ -50,8 +52,8 @@ Meteor.startup(function () {
       { name: 'Sir Digby', description: 'A special award for secret reasons', global:true },
       { name: 'Super Connector', description: 'Awarded for pro-grade bipmanship', global:true},
 
-      { name: 'After Party', description: 'Awarded for keeping the fun fire burning'},
-      { name: 'Photo Booth', description: 'Awarded for getting snap happy' },
+      { name: 'After Party', event: "Container Camp", description: 'Awarded for keeping the fun fire burning'},
+      { name: 'Photo Booth', event: "Container Camp", description: 'Awarded for getting snap happy' },
     ]
 
     badges
@@ -85,7 +87,8 @@ function urlFor (badge) {
 }
 
 function fileNameFor (badge) {
-  return badge.puid + '.png'
+  if (badge.puid) return badge.puid + '.png'
+  return puidFor(badge) + '.png'
 }
 
 function snakeCase (string) {

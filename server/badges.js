@@ -6,6 +6,10 @@ Meteor.publish('badges', function(id) {
 Meteor.methods({
 
   'tweetBadge': function (badgeData, cardData) {
+    if (!Meteor.settings || ! Meteor.settings.twitter) {
+      throw new Meteor.Error(420, "Badge service is silent")
+    }
+
     check(badgeData, Match.ObjectIncluding({ name: String, event: Match.Optional(String) }))
 
     var fields = {name: badgeData.name}
